@@ -1,3 +1,10 @@
+#  VScode project file
+.vscode
+*.json
+
+#Java
+bin/
+
 # Compiled class file
 *.class
 
