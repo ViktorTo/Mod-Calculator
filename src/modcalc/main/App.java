@@ -1,4 +1,4 @@
-package sample.main;
+package modcalc.main;
 
 import javafx.application.Application;
 import javafx.fxml.FXML;

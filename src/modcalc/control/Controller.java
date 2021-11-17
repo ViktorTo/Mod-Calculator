@@ -1,6 +1,5 @@
-package sample.control;
+package modcalc.control;
 
-import javafx.animation.TranslateTransition;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
