@@ -23,8 +23,8 @@ public class Controller {
 
     private String result = "";
     private String input = "";
-    private String cssLight = this.getClass().getResource("/sample/resources/style.css").toExternalForm();
-    private String cssDark = this.getClass().getResource("/sample/resources/style2.css").toExternalForm();
+    private String cssLight = this.getClass().getResource("/modcalc/resources/style.css").toExternalForm();
+    private String cssDark = this.getClass().getResource("/modcalc/resources/style2.css").toExternalForm();
     private String cssTemp = "";
     private int calc;
 

@@ -11,8 +11,7 @@ import javafx.stage.StageStyle;
 
 public class App extends Application {
 
-    private double yOffset;
-    private double xOffset;
+    private double yOffset, xOffset;
 
     @FXML
     private AnchorPane rootPane;
@@ -20,15 +19,10 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        Parent root = FXMLLoader.load(getClass().getResource("/sample/resources/mainWindow.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/modcalc/resources/mainWindow.fxml"));
         Scene home = new Scene(root);
 
         root.setOnMousePressed(e -> {
-
-            /*
-             * yOffset = primaryStage.getY() - e.getScreenY(); xOffset = primaryStage.getX()
-             * - e.getScreenX();
-             */
 
             yOffset = e.getScreenY();
             xOffset = e.getScreenX();
