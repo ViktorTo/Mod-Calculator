@@ -1,25 +1,28 @@
 package modcalc.control;
 
+import javafx.animation.TranslateTransition;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ToggleButton;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Rectangle;
+import javafx.util.Duration;
 
 public class Controller {
 
     @FXML
     private Label output;
     @FXML
+    private Rectangle toggleButt;
+
+    @FXML
     private AnchorPane rootPane;
     @FXML
     private Button mod;
-    @FXML
-    private ToggleButton theme;
 
     private String result = "";
     private String input = "";
@@ -27,6 +30,7 @@ public class Controller {
     private String cssDark = this.getClass().getResource("/modcalc/resources/style2.css").toExternalForm();
     private String cssTemp = "";
     private int calc;
+    private TranslateTransition trans = new TranslateTransition(Duration.millis(200));
 
     public void inputKeys(KeyEvent event) {
 
@@ -59,24 +63,34 @@ public class Controller {
 
     }
 
-    public void changeTheme(MouseEvent mouseEvent) {
+    public void toggleButtonClicked(MouseEvent mouseEvent) {
+
+        // toggleButt.setTranslateX(toggleButt.getLayoutX() + 13);
 
         if (cssTemp.equals(cssLight) || cssTemp.equals("")) {
 
+            trans.setNode(toggleButt);
+            trans.setFromX(toggleButt.getLayoutX() - 22);
             cssTemp = cssDark;
             rootPane.getStylesheets().clear();
             rootPane.getStylesheets().add(cssDark);
+            trans.setToX(toggleButt.getLayoutX() - 2);
+            trans.play();
 
         } else {
 
+            trans.setNode(toggleButt);
+            trans.setFromX(toggleButt.getLayoutX());
             cssTemp = cssLight;
             rootPane.getStylesheets().clear();
             rootPane.getStylesheets().add(cssLight);
+            trans.setToX(toggleButt.getLayoutX() - 22);
+            trans.play();
         }
 
         System.out.println(cssTemp);
 
-        theme.setText((theme.getText().equals("Light") ? "Dark" : "Light"));
+        System.out.println("Pushed!");
 
     }
 

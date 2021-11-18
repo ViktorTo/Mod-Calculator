@@ -24,8 +24,8 @@ public class App extends Application {
 
         root.setOnMousePressed(e -> {
 
-            yOffset = e.getScreenY();
-            xOffset = e.getScreenX();
+            xOffset = e.getSceneX();
+            yOffset = e.getSceneY();
 
             System.out.println(yOffset);
             System.out.println(xOffset);
@@ -34,8 +34,8 @@ public class App extends Application {
 
         root.setOnMouseDragged(e -> {
 
-            primaryStage.setX(e.getSceneX() + xOffset);
-            primaryStage.setY(e.getSceneY() + yOffset);
+            primaryStage.setX(e.getSceneX() - xOffset);
+            primaryStage.setY(e.getSceneY() - yOffset);
 
         });
 

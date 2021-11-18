@@ -11,11 +11,19 @@
   -fx-font-family: "Roboto", sans-serif;
 }
 
-#Toggle.toggle-button {
-  -fx-background-color: transparent;
-  -fx-border-radius: 4;
-  -fx-text-fill: white;
-  -fx-font-family: "Roboto", sans-serif;
+#ToggleBackground {
+  -fx-arc-height: 15px;
+  -fx-arc-width: 15px;
+}
+
+#ToggleBackground2 {
+  -fx-arc-height: 15px;
+  -fx-arc-width: 15px;
+}
+
+#ToggleButton {
+  -fx-arc-height: 15px;
+  -fx-arc-width: 15px;
 }
 
 #Result.label {
@@ -58,8 +66,6 @@
   -fx-text-fill: #222831;
 }
 
-#Toggle.toggle-button:hover {
-  -fx-background-color: #eeeeee;
-  -fx-text-fill: #222831;
-  -fx-font-size: 11px;
+#ToggleButton:hover {
+  -fx-fill: rgb(105, 103, 103);
 }
